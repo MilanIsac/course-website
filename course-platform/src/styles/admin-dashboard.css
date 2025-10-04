@@ -1,0 +1,61 @@
+/* Admin Dashboard */
+.admin-dashboard {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.admin-dashboard form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-dashboard select,
+.admin-dashboard input,
+.admin-dashboard textarea {
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.admin-dashboard textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.admin-dashboard button {
+  padding: 12px;
+  background-color: #2ecc71;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  margin: 10px auto 0 auto; /* centered */
+  transition: background 0.3s;
+  max-width: 200px;
+  display: block;
+  text-align: center;
+}
+
+.admin-dashboard button:hover {
+  background-color: #27ae60;
+}
+
+.admin-dashboard .message {
+  margin-top: 15px;
+  text-align: center;
+  color: #27ae60;
+}
+
+@media (max-width: 500px) {
+  .admin-dashboard {
+    margin: 40px 20px;
+    padding: 20px;
+  }
+}

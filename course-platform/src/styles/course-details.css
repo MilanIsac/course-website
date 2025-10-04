@@ -1,0 +1,103 @@
+.course-details {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.course-details h2, 
+.course-details h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.content-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.content-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-item h3 {
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.content-item a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.content-item a:hover {
+  text-decoration: underline;
+}
+
+.add-content-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.add-content-form input,
+.add-content-form textarea {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.add-content-form button {
+  padding: 0.7rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-content-form button:hover {
+  background: #0056b3;
+}
+
+.submit-btn {
+  display: block;
+  margin: 1rem auto;
+  max-width: 200px;
+  font-size: medium;
+}
+
+.actions {
+  margin-top: 0.5rem;
+}
+
+.actions button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button:first-child {
+  background: #00ff22;
+  color: #000000;
+}
+
+.actions button:last-child {
+  background: #dc3545;
+  color: #fff;
+}
+
+.actions button:hover {
+  opacity: 0.85;
+}

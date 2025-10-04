@@ -1,0 +1,22 @@
+{
+  "name": "course_website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "backend": "cd backend && nodemon index.js",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "frontend": "cd course-platform && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bcrypt": "^6.0.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
