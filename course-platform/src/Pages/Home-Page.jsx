@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/home.css";
 import Navbar from "../components/Navbar";
 import CourseCard from "../components/CourseCard";
 
 export default function HomePage() {
-  // Dummy data for courses
-  const courses = [
-    { id: 1, title: "React Basics", description: "Learn the fundamentals of React.js", image: "https://via.placeholder.com/250" },
-    { id: 2, title: "Node.js Crash Course", description: "Build backend APIs with Node.js and Express", image: "https://via.placeholder.com/250" },
-    { id: 3, title: "MongoDB Essentials", description: "Understand NoSQL with MongoDB", image: "https://via.placeholder.com/250" },
-  ];
+
+  const [courses, setCourses] = useState([]);
+
+  const fetchCourses = async () => {
+    try {
+      const res = await fetch('http://localhost:3000/api/courses');
+      const data = await res.json();
+      setCourses(data);
+
+    } catch (error) {
+      console.error('Error fetching courses', error);
+    }
+  }
+
+  useEffect(() => {
+    fetchCourses();
+
+    const interval = setInterval(() => {
+      fetchCourses();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
-      
+
       {/* <Navbar /> */}
       <header className="home-header">
         <h1>Welcome to Course Platform 🎓</h1>
@@ -24,7 +41,7 @@ export default function HomePage() {
         <h2>Available Courses</h2>
         <div className="courses-grid">
           {courses.map((course) => (
-            <CourseCard key={course.id} {...course} />
+            <CourseCard key={course._id} course={course} />
           ))}
         </div>
       </section>

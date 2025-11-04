@@ -7,6 +7,7 @@ export default function AddNewCourse({ onAdd }) {
     const [courseName, setCourseName] = useState("");
     const [description, setDescription] = useState("");
     const [error, setError] = useState("");
+    const [flash, setFlash] = useState('');
 
     const navigate = useNavigate();
 
@@ -20,6 +21,7 @@ export default function AddNewCourse({ onAdd }) {
             });
 
             console.log("Added new course: ", res.data);
+            setFlash('Course added successfully');
             setError("");
 
             if (onAdd) {
@@ -33,6 +35,7 @@ export default function AddNewCourse({ onAdd }) {
         }
         catch (err) {
             console.error(err);
+            setFlash('');
             setError(err.response?.data?.message || "Adding course failed");
         }
     };
@@ -43,6 +46,7 @@ export default function AddNewCourse({ onAdd }) {
                 <h2>Add New Course</h2>
 
                 {error && <p className='error'>{error}</p>}
+                {flash && <p className='flash'>{flash}</p>}
 
                 <label>Course Name</label>
                 <input

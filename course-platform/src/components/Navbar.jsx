@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 import axios from 'axios';
 import AddNewCourse from "../Pages/Add-New-Course";
@@ -8,13 +8,15 @@ function Navbar({ user, onLogout }) {
   const [coursesOpen, setCoursesOpen] = useState(false);
   const [courses, setCourses] = useState([]);
   const hideTimeout = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
         const res = await axios.get("http://localhost:3000/api/courses");
         setCourses(res.data);
-      } catch (err) {
+      }
+      catch (err) {
         console.error("Error fetching courses:", err);
       }
     };
@@ -35,14 +37,13 @@ function Navbar({ user, onLogout }) {
 
   const handleLogoutClick = () => {
     onLogout();
-    navigate("/"); // redirect to home after logout
+    navigate('/')
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
 
-        {/* Brand/Logo */}
         <div className="navbar-brand">
           <Link to="/" className="brand-link">
             <span className="brand-icon">🎓</span>

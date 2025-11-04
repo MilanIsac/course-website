@@ -106,3 +106,13 @@
     padding: 12px;
   }
 }
+
+.add-new-course .flash {
+  margin: 8px 0 0;
+  color: #41c035;
+  background: #fff3f3;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(192, 53, 59, 0.12);
+}
