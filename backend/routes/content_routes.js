@@ -15,4 +15,18 @@ router.get('/course/:courseId', async (req, res) => {
 });
 
 
+router.get('/', async (req, res) => {
+  try {
+    const contents = await Content.find()
+      .populate('course_id', 'course_name')
+      .sort({ createdAt: -1 });
+    res.json(contents);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+
+
 module.exports = router;

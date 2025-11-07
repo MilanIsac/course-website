@@ -1,4 +1,4 @@
-.course-card {
+.content-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -7,18 +7,18 @@
   background-color: #fff;
 }
 
-.course-header {
+.content-header {
   text-align: center;
 }
 
-.course-title {
+.content-title {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
 }
 
-.course-category {
+.content-category {
   font-size: 1rem;
   color: #666;
   margin-bottom: 15px;

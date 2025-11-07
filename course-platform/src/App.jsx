@@ -17,7 +17,6 @@ function App() {
   const [user, setUser] = useState(null);
   const [courses, setCourses] = useState([]);
 
-  // ✅ Restore login state from localStorage on page refresh
   useEffect(() => {
     const token = localStorage.getItem("token");
     const adminToken = localStorage.getItem("adminToken");
@@ -48,7 +47,6 @@ function App() {
           element={<SignupPage onSignup={() => setUser({ isAdmin: false })} />}
         />
 
-        {/* Protected user route */}
         <Route
           path="/add-course"
           element={
@@ -58,7 +56,13 @@ function App() {
           }
         />
 
-        <Route path="/courses/:id" element={<CourseDetails />} />
+        <Route
+          path="/courses/:id"
+          element={
+            <ProtectedRoute>
+              <CourseDetails />
+            </ProtectedRoute>
+          } />
 
         <Route path="/admin/signup" element={<AdminSignup />} />
         <Route
