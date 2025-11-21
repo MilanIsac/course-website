@@ -17,8 +17,6 @@ export default function HomePage() {
 
   useEffect(() => {
     fetchContents();
-
-    // Automatically refresh every 5 seconds
     const interval = setInterval(fetchContents, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -31,7 +29,7 @@ export default function HomePage() {
       </header>
 
       <section className="courses-section">
-        <h2>Available Videos</h2>
+        <h2>Available Courses</h2>
         <div className="courses-grid">
           {contents.map((content) => (
             <CourseCard key={content._id} content={content} />

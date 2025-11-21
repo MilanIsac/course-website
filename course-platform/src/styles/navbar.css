@@ -24,7 +24,6 @@
   font-size: 1.5rem;
 }
 
-/* Split navbar links into left and right */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -65,7 +64,6 @@
   color: #ffffff;
 }
 
-/* Dropdown */
 .dropdown {
   position: relative;
 }
