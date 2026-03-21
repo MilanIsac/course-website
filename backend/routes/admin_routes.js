@@ -9,7 +9,6 @@ require("dotenv").config();
 
 const router = express.Router();
 
-// Middleware to verify admin JWT
 const verifyAdmin = (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) return res.status(401).json({ message: "No token provided" });
@@ -70,7 +69,7 @@ router.post("/signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
-    const admin = await Admin.findOne({ email });  // ✅ Only check Admin collection
+    const admin = await Admin.findOne({ email });
     if (!admin) return res.status(401).json({ message: "Unauthorized" });
 
     const isMatch = await bcrypt.compare(password, admin.password);
